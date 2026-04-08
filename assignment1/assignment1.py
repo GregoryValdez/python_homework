@@ -22,6 +22,10 @@ def calc(*args): # Task 3
             return a - b
         case (a, b, 'modulo'):
             return a % b
+        case (a, b, 'int_divide'): # Floor division, which divides and rounds down to the nearest whole number.
+            return a // b 
+        case (a, b, 'power'): # Exponentiation
+            return a ** b
         case _:
             return 'Invalid operation or number of arguments.'
 
@@ -56,8 +60,10 @@ def grade(*args): # Task 5
         return 'Invalid data was provided.'
     
 def repeat(str, int): # Task 6
+    result = ''
     for i in range(int):
-        return str * int
+        result += str # Add the string to result each iteration.
+    return result
     
 def student_scores(operation, **kwargs): # Task 7
     for key, value in kwargs.items():
@@ -102,9 +108,3 @@ def pig_latin(str): # Task 10
                     return word[i:] + word[:i] + 'ay'
     words = str.split()
     return ' '.join(convert_word(word) for word in words) # Converts each word in the input string to Pig Latin and joins them back into a single string.
-print(pig_latin("apple"))
-print(pig_latin("banana"))
-print(pig_latin("cherry"))
-print(pig_latin("quiet"))
-print(pig_latin("square"))
-print(pig_latin("the quick brown fox"))
