@@ -8,9 +8,9 @@ try:
                 first = False # Every loop after uses the else:
             else:
                 user_entry = input('What else? (type "done for now" to finish) ')
-            if user_entry == 'done for now':
+            diary.write(user_entry + '\n') # Append input and add a newline to each entry. Include termination line
+            if user_entry.lower() == 'done for now': # Calling .lower() prevents from entering termination twice
                 break # Stop when user enters 'done for now'
-            diary.write(user_entry + '\n') # Append input and add a newline to each entry.
 except Exception as e:
     trace_back = traceback.extract_tb(e.__traceback__)
     stack_trace = list()
